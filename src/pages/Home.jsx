@@ -1,11 +1,10 @@
 import styled from "styled-components"
 import { Header, HeaderGoldMenu, HeaderTop } from "../components/Header"
-import { CustomButton } from "../components/Button"
 
 import heroBanner from "../assets/images/banner.png"
 import logo from "../assets/images/logo0.png"
-import b2image from "../assets/images/B2.jpg"
 import { HeroBanner } from "../components/Banner"
+import { ScrollableList } from "../components/ScrollableList"
 
 export default function Home() {
     return(
@@ -50,6 +49,10 @@ export default function Home() {
                     <button>Fale connosco</button>
                 </div>
             </About>
+            <AvailablePeoples>
+                <h1>Advogados a disposição</h1>
+                <ScrollableList />
+            </AvailablePeoples>
         </Container>
     )
 }
@@ -94,5 +97,20 @@ const AboutImage = styled.div`
         object-fit: cover;
         width: 100%;
         height: 100%;
+    }
+`
+const AvailablePeoples = styled.div`
+    margin: 0 auto;
+    width: 95%;
+    height: auto;
+    transform: translateY(100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1 {
+        font-size: 3rem;
+        font-weight: 300;
+        text-align: center;
+        color: var(--secondaryColor);
     }
 `
