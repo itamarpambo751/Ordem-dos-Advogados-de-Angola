@@ -36,6 +36,11 @@ export const HeroBanner = styled.div`
                 &:first-child {
                     background-color: var(--secondaryColor);
                 }
+                &:nth-child(2) {
+                    border: 2px solid var(--secondaryColor);
+                    background-color: transparent;
+                    color: var(--secondaryColor);
+                }
             }
         }
     }
