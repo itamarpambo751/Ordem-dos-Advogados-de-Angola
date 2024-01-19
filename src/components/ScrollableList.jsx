@@ -3,18 +3,28 @@ import styled from "styled-components"
 import { Availables } from "../data/availables"
 import { AvailablePeople } from "."
 import { ArrowLeft, ArrowRight } from "phosphor-react"
+import React from "react"
 
 const arrayItems = Availables
 export const ScrollableList = () => {
+    const [scrollable, setScrollable] = React.useState(0)
     return(
         <ScrollableListItems>
-            <ScrollablePointer>
+            <ScrollablePointer onClick={() => setScrollable(() => {
+                if (scrollable + 1320 < (arrayItems.length - 1 * 440))
+                    return scrollable + 1320
+                return scrollable
+            })}>
                 <ArrowLeft />
             </ScrollablePointer>
-            <HorizontalScrollableContainer count={arrayItems.length}>
+            <HorizontalScrollableContainer count={arrayItems.length} scrollable={scrollable}>
                 {arrayItems.map((user) => <AvailablePeople key={user.identity} {...user}/>)}
             </HorizontalScrollableContainer>
-            <ScrollablePointer>
+            <ScrollablePointer onClick={() => setScrollable(() => {
+                if (scrollable - 1320 > -(arrayItems.length * 440))
+                    return scrollable - 1320
+                return scrollable
+            })}>
                 <ArrowRight />
             </ScrollablePointer>
         </ScrollableListItems>
@@ -26,9 +36,10 @@ const ScrollableListItems = styled.ul`
     overflow-x: hidden;
     transform: translateY(100px);
     position: relative;
-`
-const HorizontalScrollableContainer = styled.div((properties) => `
-    width: ${(properties.count * 500) + 'px'};
+`// (400px + 40px) * 3 = 1320px
+const HorizontalScrollableContainer = styled.div((props) => `
+    width: ${(props.count * 440) + 'px'};
+    div { &:first-child { margin-left: ${ props.scrollable + 'px' } } }
     div { &:not(:first-child) { margin-left: 40px } }
 `)
 const ScrollablePointer = styled.button`
