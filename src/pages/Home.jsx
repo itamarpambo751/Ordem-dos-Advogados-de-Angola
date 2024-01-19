@@ -3,6 +3,7 @@ import { Header, HeaderGoldMenu, HeaderTop } from "../components/Header"
 
 import heroBanner from "../assets/images/banner.png"
 import logo from "../assets/images/logo0.png"
+import about from "../assets/images/about.png"
 import { HeroBanner } from "../components/Banner"
 import { ScrollableList } from "../components/ScrollableList"
 
@@ -42,7 +43,7 @@ export default function Home() {
             <About>
                 <AboutImage>
                     <div className="shadow"/>
-                    <img src="" alt="" />
+                    <img src={about} alt="" />
                 </AboutImage>
                 <div className="right-side">
                     <p>A Ordem dos Advogados é a instituição representativa dos licenciadosem Direito que exercem a advogacia.</p>

@@ -5,23 +5,22 @@ import { AvailablePeople } from "."
 import { ArrowLeft, ArrowRight } from "phosphor-react"
 import React from "react"
 
-const arrayItems = Availables
 export const ScrollableList = () => {
     const [scrollable, setScrollable] = React.useState(0)
     return(
         <ScrollableListItems>
             <ScrollablePointer onClick={() => setScrollable(() => {
-                if (scrollable + 1320 < (arrayItems.length - 1 * 440))
+                if (scrollable + 1320 < Availables.length - 1 * 440)
                     return scrollable + 1320
                 return scrollable
             })}>
                 <ArrowLeft />
             </ScrollablePointer>
-            <HorizontalScrollableContainer count={arrayItems.length} scrollable={scrollable}>
-                {arrayItems.map((user) => <AvailablePeople key={user.identity} {...user}/>)}
+            <HorizontalScrollableContainer count={Availables.length} scrollable={scrollable}>
+                {Availables.map((user) => <AvailablePeople key={user.identity} {...user}/>)}
             </HorizontalScrollableContainer>
             <ScrollablePointer onClick={() => setScrollable(() => {
-                if (scrollable - 1320 > -(arrayItems.length * 440))
+                if (scrollable - 1320 > -Availables.length * 440)
                     return scrollable - 1320
                 return scrollable
             })}>
@@ -57,4 +56,11 @@ const ScrollablePointer = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
+    color: white;
+    background-color: #4B4B4B64;
+    transition: .3s ease-in-out;
+    &:hover {
+        background-color: #85858564;
+    }
 `
