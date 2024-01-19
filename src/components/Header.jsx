@@ -16,7 +16,6 @@ export const Header = styled.header`
 export const HeaderTop = styled.div`
     width: 95%;
     height: 80px;
-    padding: 10px 0;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -25,7 +24,7 @@ export const HeaderTop = styled.div`
 
 export const HeaderGoldMenu = styled.div`
     width: 60%;
-    height: 80px;
+    height: 50px;
     background-color: var(--secondaryColor);
     margin-left: auto;
     position: relative;
@@ -33,6 +32,9 @@ export const HeaderGoldMenu = styled.div`
     display: flex;
     align-items: center;
     padding: 0% 40px;
+    position: absolute;
+    right: 0;
+    top: 70px;
     nav ul {
         list-style-type: none;
         display: flex;

@@ -3,6 +3,7 @@ import { Header, HeaderGoldMenu, HeaderTop } from "../components/Header"
 import { CustomButton } from "../components/Button"
 
 import heroBanner from "../assets/images/banner.png"
+import logo from "../assets/images/logo0.png"
 import { HeroBanner } from "../components/Banner"
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
         <Container>
             <Header>
                 <HeaderTop>
-                    <h1>Logo</h1>
+                    <img src={logo} width={150} />
                     <div>
                         <CustomButton>
                             Entrar
@@ -30,7 +31,11 @@ export default function Home() {
             </Header>
             <HeroBanner>
                 <div id="shadow">
-                    
+                    <h1>Vamos ajudar você a encontrar um excelente Advogado.</h1>
+                    <div>
+                        <button>Entrar</button>
+                        <button>Cadastrar</button>
+                    </div>
                 </div>
                 <img src={heroBanner} alt="banner"/>
             </HeroBanner>
