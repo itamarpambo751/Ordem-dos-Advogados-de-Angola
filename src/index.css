@@ -2,20 +2,30 @@
     --primaryColor: #323232;
     --secondaryColor: #AF8C54;
     --blueColor: #3090FF;
+    --bodyColor: #242925;
 }
 
 * {
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
-    font-family: Poppins, sans-serif;
-    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
 }
 
 body {
     overflow-x: hidden;
+    background-color: var(--bodyColor);
 }
 
+.shadow {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+}
 a {
     text-decoration: none;
 }

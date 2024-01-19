@@ -43,10 +43,11 @@ export default function Home() {
             <About>
                 <AboutImage>
                     <div className="shadow"/>
-                    <img src={b2image} alt="" />
+                    <img src="" alt="" />
                 </AboutImage>
-                <div>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum voluptatem dicta, natus soluta consequatur, enim ex, quasi eligendi dolor magni ut. Praesentium, dicta necessitatibus corporis saepe ipsam consequatur quas ex!
+                <div className="right-side">
+                    <p>A Ordem dos Advogados é a instituição representativa dos licenciadosem Direito que exercem a advogacia.</p>
+                    <button>Fale connosco</button>
                 </div>
             </About>
         </Container>
@@ -61,6 +62,29 @@ const About = styled.div`
     width: 95%;
     margin: 0 auto;
     display: flex;
+    align-items: center;
+    padding: 45px 0;
+    gap: 2rem;
+    .right-side {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        justify-content: flex-start;
+        align-items: flex-start;
+        p {
+            font-size: 3rem;
+            width: 40rem;
+            color: var(--secondaryColor);
+        }
+        button {
+            padding: 15px 75px;
+            border-radius: 50px;
+            border: 2px solid var(--secondaryColor);
+            color: var(--secondaryColor);
+            background-color: transparent;
+            font-size: 1rem;
+        }
+    }
 `
 const AboutImage = styled.div`
     position: relative;
